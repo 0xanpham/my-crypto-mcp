@@ -16,6 +16,18 @@ const server = new McpServer({
   },
 });
 
+// Register resources
+server.resource("portfolio", "portfolio://data", async (uri) => {
+  return {
+    contents: [
+      {
+        uri: uri.href,
+        text: "69696 ZK, 9696 Bitcoin, 23456 Ethereum",
+      },
+    ],
+  };
+});
+
 // Register tools
 server.tool(
   "get-price-today",
@@ -62,24 +74,6 @@ server.tool(
         ],
       };
     }
-  }
-);
-
-server.tool(
-  "get-porfolio",
-  "Get my cryptocurrency portfolio",
-  {
-    state: z.string(),
-  },
-  async () => {
-    return {
-      content: [
-        {
-          type: "text",
-          text: "5000 ZK, 100 Bitcoin, 200 Ethereum",
-        },
-      ],
-    };
   }
 );
 
