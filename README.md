@@ -69,7 +69,7 @@ Attach **portfolio** resource from the MCP using the attachment button in Claude
 You can now ask questions like:
 
 ```
-What is my portfolio today value?
+What is my portfolio's current value?
 ```
 
 Claude will fetch the latest information from the CoinMarketCap API and provide detailed information about your portfolio.
